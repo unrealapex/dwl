@@ -63,6 +63,9 @@ effect the next time dwl is executed.
 As in the dwm community, we encourage users to share patches they have
 created. Check out the [dwl-patches] repository!
 
+## Patches
+- alwayscenter
+
 ## Running dwl
 
 dwl can be run on any of the backends supported by wlroots. This means you can
