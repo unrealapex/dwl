@@ -117,7 +117,7 @@ LIBINPUT_CONFIG_TAP_MAP_LMR -- 1/2/3 finger tap maps to left/middle/right
 */
 static const enum libinput_config_tap_button_map button_map = LIBINPUT_CONFIG_TAP_MAP_LRM;
 
-static const int cursor_timeout = 5;
+static const int cursor_timeout = 4;
 
 /* If you want to use the windows key for MODKEY, use WLR_MODIFIER_LOGO */
 #define MODKEY WLR_MODIFIER_LOGO
@@ -177,6 +177,7 @@ static const Key keys[] = {
 	{ 0,                         XKB_KEY_XF86AudioRaiseVolume,    spawn,         SHCMD("volumewizard up")},
 	{ 0,                         XKB_KEY_XF86AudioLowerVolume,    spawn,         SHCMD("volumewizard down")},
 	{ 0,                         XKB_KEY_XF86AudioMute,           spawn,         SHCMD("volumewizard mute")},
+	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_x,                       spawn,         SHCMD("wlock") },
 	/* Ctrl-Alt-Backspace and Ctrl-Alt-Fx used to be handled by X server */
 	{ WLR_MODIFIER_CTRL|WLR_MODIFIER_ALT,XKB_KEY_Terminate_Server, quit, {0} },
 	/* Ctrl-Alt-Fx is used to switch to another VT, if you don't know what a VT is
