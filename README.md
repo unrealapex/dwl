@@ -66,6 +66,7 @@ created. Check out the [dwl-patches] repository!
 ## Patches
 - alwayscenter
 - bar
+- swallow
 
 ## Running dwl
 
