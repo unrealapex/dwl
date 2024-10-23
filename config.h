@@ -24,9 +24,8 @@ static uint32_t colors[][3]                = {
 };
 
 /* tagging - TAGCOUNT must be no greater than 31 */
-/* FIXME: replace references to TAGCOUNT with length(tags) */
-#define TAGCOUNT (9)
 static char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+#define TAGCOUNT LENGTH(tags)
 
 /* logging */
 static int log_level = WLR_ERROR;
