@@ -68,6 +68,7 @@ created. Check out the [dwl-patches] repository!
 - bar
 - pertag
 - swallow
+- unclutter
 
 ## Running dwl
 
