@@ -173,7 +173,10 @@ static const Key keys[] = {
 	TAGKEYS(          XKB_KEY_8, XKB_KEY_asterisk,                   7),
 	TAGKEYS(          XKB_KEY_9, XKB_KEY_parenleft,                  8),
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_Q,          quit,           {0} },
-
+    /* volume control */
+	{ 0,                         XKB_KEY_XF86AudioRaiseVolume,    spawn,         SHCMD("volumewizard up")},
+	{ 0,                         XKB_KEY_XF86AudioLowerVolume,    spawn,         SHCMD("volumewizard down")},
+	{ 0,                         XKB_KEY_XF86AudioMute,           spawn,         SHCMD("volumewizard mute")},
 	/* Ctrl-Alt-Backspace and Ctrl-Alt-Fx used to be handled by X server */
 	{ WLR_MODIFIER_CTRL|WLR_MODIFIER_ALT,XKB_KEY_Terminate_Server, quit, {0} },
 	/* Ctrl-Alt-Fx is used to switch to another VT, if you don't know what a VT is
