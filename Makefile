@@ -1,4 +1,4 @@
-.POSIX:
+
 .SUFFIXES:
 
 include config.mk
@@ -63,6 +63,8 @@ install: dwl
 	mkdir -p $(DESTDIR)$(PREFIX)/bin
 	cp -f dwl $(DESTDIR)$(PREFIX)/bin
 	chmod 755 $(DESTDIR)$(PREFIX)/bin/dwl
+	cp -f volumewizard $(DESTDIR)$(PREFIX)/bin
+	cp -f screenshot $(DESTDIR)$(PREFIX)/bin
 	mkdir -p $(DESTDIR)$(MANDIR)/man1
 	cp -f dwl.1 $(DESTDIR)$(MANDIR)/man1
 	chmod 644 $(DESTDIR)$(MANDIR)/man1/dwl.1
@@ -70,7 +72,7 @@ install: dwl
 	cp -f dwl.desktop $(DESTDIR)$(DATADIR)/wayland-sessions/dwl.desktop
 	chmod 644 $(DESTDIR)$(DATADIR)/wayland-sessions/dwl.desktop
 uninstall:
-	rm -f $(DESTDIR)$(PREFIX)/bin/dwl $(DESTDIR)$(MANDIR)/man1/dwl.1 \
+	rm -f $(DESTDIR)$(PREFIX)/bin/dwl $(DESTDIR)$(PREFIX)/bin/volumewizard $(DESTDIR)$(PREFIX)/bin/screenshot $(DESTDIR)$(MANDIR)/man1/dwl.1 \
 		$(DESTDIR)$(DATADIR)/wayland-sessions/dwl.desktop
 
 .SUFFIXES: .c .o

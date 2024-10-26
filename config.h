@@ -147,7 +147,7 @@ static const int cursor_timeout = 4;
 
 /* commands */
 static const char *termcmd[] = { "foot", NULL };
-static const char *menucmd[] = { "wmenu-run", NULL };
+static const char *menucmd[] = { "mew-run-desktop", NULL };
 
 static const Key keys[] = {
 	/* Note that Shift changes certain key codes: c -> C, 2 -> at, etc. */
@@ -172,8 +172,8 @@ static const Key keys[] = {
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_f,         togglefullscreen, {0} },
 	{ MODKEY,                    XKB_KEY_0,          view,           {.ui = ~0} },
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_parenright, tag,            {.ui = ~0} },
-	{ MODKEY,                    XKB_KEY_comma,      focusmon,       {.i = WLR_DIRECTION_LEFT} },
-	{ MODKEY,                    XKB_KEY_period,     focusmon,       {.i = WLR_DIRECTION_RIGHT} },
+	/* { MODKEY,                    XKB_KEY_comma,      focusmon,       {.i = WLR_DIRECTION_LEFT} }, */
+	/* { MODKEY,                    XKB_KEY_period,     focusmon,       {.i = WLR_DIRECTION_RIGHT} }, */
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_less,       tagmon,         {.i = WLR_DIRECTION_LEFT} },
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_greater,    tagmon,         {.i = WLR_DIRECTION_RIGHT} },
 	TAGKEYS(          XKB_KEY_1, XKB_KEY_exclam,                     0),
@@ -190,7 +190,15 @@ static const Key keys[] = {
 	{ 0,                         XKB_KEY_XF86AudioRaiseVolume,    spawn,         SHCMD("volumewizard up")},
 	{ 0,                         XKB_KEY_XF86AudioLowerVolume,    spawn,         SHCMD("volumewizard down")},
 	{ 0,                         XKB_KEY_XF86AudioMute,           spawn,         SHCMD("volumewizard mute")},
-	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_x,                       spawn,         SHCMD("wlock") },
+	/* media control */
+	{ 0,                         XKB_KEY_XF86AudioPlay,           spawn,         SHCMD("playerctl play-pause")},
+	{ 0,                         XKB_KEY_XF86AudioPrev,           spawn,         SHCMD("playerctl prev")},
+	{ 0,                         XKB_KEY_XF86AudioNext,           spawn,         SHCMD("playerctl next")},
+	/* screenshot */
+	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_P,                       spawn,         SHCMD("screenshot full") },
+	{ MODKEY,                    XKB_KEY_p,                       spawn,         SHCMD("screenshot select") },
+	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_X,                       spawn,         SHCMD("wlock") },
+	{ MODKEY,                    XKB_KEY_period,                  spawn,         SHCMD("mew-emoji") },
 	/* Ctrl-Alt-Backspace and Ctrl-Alt-Fx used to be handled by X server */
 	{ WLR_MODIFIER_CTRL|WLR_MODIFIER_ALT,XKB_KEY_Terminate_Server, quit, {0} },
 	/* Ctrl-Alt-Fx is used to switch to another VT, if you don't know what a VT is

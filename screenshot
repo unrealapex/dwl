@@ -1,0 +1,44 @@
+#!/bin/sh
+
+if [ ! "$NO_COLOR" = 1 ]; then
+  red="\033[1;31m"
+  fg_reset="\033[0m"
+else
+  red=""
+  fg_reset=""
+fi
+
+error() {
+  printf "%b\n" "${red}$1${fg_reset}" 1>&2
+}
+
+
+if ! command -v grim; then
+  error "grim is not installed"
+  exit
+fi
+
+bold="\033[1m"
+reset="\033[m"
+image_path=$HOME/Pictures/Screenshots/Screenshot\ from\ $(date +%Y-%m-%d\ %H-%M-%S).png
+
+case $1 in
+select)
+        slurp | grim -g - "$image_path"
+        ;;
+        full)
+        grim  "$image_path"
+        ;;
+*)
+
+  printf "%b" "${bold}screenshot${reset}: wrapper for import
+
+${bold}Usage${reset}: screenshot [select|full]
+" >&2
+        exit
+        ;;
+esac
+
+wl-copy < "$image_path"
+
+herbe "screenshot: image saved"
