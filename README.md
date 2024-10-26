@@ -65,6 +65,7 @@ created. Check out the [dwl-patches] repository!
 
 ## Patches
 - alwayscenter
+- autostart
 - bar
 - gaps
 - pertag
