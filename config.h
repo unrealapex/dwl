@@ -37,6 +37,7 @@ static const char *const autostart[] = {
         /* "gentoo-pipewire-launcher restart &", NULL, */
         "playerctld", "daemon", NULL,
         "widle", "-t 300 wlock &", NULL,
+        "dunst &", NULL,
         NULL /* terminate */
 };
 
