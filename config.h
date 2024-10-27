@@ -33,7 +33,7 @@ static int log_level = WLR_ERROR;
 /* Autostart */
 static const char *const autostart[] = {
         "wbg", "/home/aaron/dotfiles/sakura.png", NULL,
-        "gentoo-pipewire-launcher &", NULL,
+        "gentoo-pipewire-launcher restart &", NULL,
         "playerctld", "daemon", NULL,
         "widle", "-b -t 300 wlock", NULL,
         "mon", NULL,
