@@ -32,12 +32,14 @@ static int log_level = WLR_ERROR;
 
 /* Autostart */
 static const char *const autostart[] = {
-        "kanshi &", NULL,
+		"wlr-randr", "--output", "eDP-1", "--off", NULL,
+		"wlr-randr", "--output", "DP-1", "--mode", "2560x1440@239.998001", "--on", NULL,
+        "eval", "$(dbus-launch  --exit-with-session --sh-syntax)", NULL,
+        "dbus-update-activation-environment", "DISPLAY", NULL,
         "wbg", "/home/aaron/dotfiles/sakura.png", NULL,
-        /* "gentoo-pipewire-launcher restart &", NULL, */
         "playerctld", "daemon", NULL,
         "widle", "-t 300 wlock &", NULL,
-        "dunst &", NULL,
+        "dunst", NULL,
         NULL /* terminate */
 };
 
