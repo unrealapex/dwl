@@ -68,6 +68,7 @@ created. Check out the [dwl-patches] repository!
 - autostart
 - bar
 - gaps
+- movestack
 - pertag
 - swallow
 - unclutter
