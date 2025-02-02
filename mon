@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if wlr-randr | grep "(DP-1)"; then
+	wlr-randr --output eDP-1 --off
+	wlr-randr --output DP-1 --mode 2560x1440@239.998001 --on
+else
+	wlr-randr --output eDP-1 --on
+fi
