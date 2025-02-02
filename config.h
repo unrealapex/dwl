@@ -194,7 +194,7 @@ static const Key keys[] = {
 	{ 0,                         XKB_KEY_XF86AudioMute,           spawn,         SHCMD("volumewizard mute")},
 	/* media control */
 	{ 0,                         XKB_KEY_XF86AudioPlay,           spawn,         SHCMD("playerctl play-pause")},
-	{ 0,                         XKB_KEY_XF86AudioPrev,           spawn,         SHCMD("playerctl prev")},
+	{ 0,                         XKB_KEY_XF86AudioPrev,           spawn,         SHCMD("playerctl previous")},
 	{ 0,                         XKB_KEY_XF86AudioNext,           spawn,         SHCMD("playerctl next")},
 	/* screenshot */
 	{ MODKEY|WLR_MODIFIER_SHIFT, XKB_KEY_P,                       spawn,         SHCMD("screenshot full") },
