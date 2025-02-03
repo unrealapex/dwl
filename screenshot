@@ -41,4 +41,6 @@ esac
 
 wl-copy < "$image_path"
 
+printf "%s\n" "screenshot saved to $image_path"
+
 notify-send "screenshot: image saved"
